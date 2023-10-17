@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+  </style>
+  <title>Title</title>
+</head>
+<body>
+  <h1>Article List</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>URL</th>
+        <th>News Content</th>
+        <th>Press</th>
+        <th>News Time</th>
+        <th>Image URL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- 데이터를 동적으로 반복하며 출력 -->
+      <tr th:each="article : ${articleList}">
+        <td th:text="${article.id}"></td>
+        <td th:text="${article.title}"></td>
+        <td th:text="${article.content}"></td>
+        <td>
+          <!-- 이미지를 표시하는 이미지 태그 -->
+          <img th:src="${article.image_url}" alt="Article Image" width="100" height="100">
+        </td>
+        <td th:text="${article.news_content}"></td>
+        <td th:text="${article.press}"></td>
+        <td th:text="${article.news_time}"></td>
+        <td>
+          <!-- URL 링크를 표시하는 링크 태그 -->
+          <a th:href="${article.url}" target="_blank">Read More</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+</body>
+</html>

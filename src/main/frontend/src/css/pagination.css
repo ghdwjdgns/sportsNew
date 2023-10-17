@@ -1,0 +1,40 @@
+.pagination-container {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* 선택적으로 배경색을 지정할 수 있습니다. */
+    border-top: 1px solid #ddd; /* 선택적으로 상단 경계선을 추가할 수 있습니다. */
+    padding: 10px; /* 선택적으로 여백을 추가할 수 있습니다. */
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    margin: 0.2rem;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button.active {
+    background-color: #0056b3;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
